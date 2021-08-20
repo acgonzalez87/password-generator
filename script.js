@@ -107,6 +107,38 @@ function generatePassword() {
     );
     return generatePassword();
   }
+
+  confirmSpecialCharacter = confirm(
+    "Would you like to include special characters?"
+  );
+
+  confirmNumber = confirm("Would you like to include numbers?");
+
+  confirmUpperCaseLetter = confirm(
+    "Would you like to include an uppercase letter?"
+  );
+
+  confirmLowerCaseLetter = confirm(
+    "Would you like to include a lower case letter?"
+  );
+
+  var passwordCharacters = [];
+
+  if (confirmSpecialCharacter) {
+    passwordCharacters = passwordCharacters.concat(specialCharacter);
+  }
+
+  if (confirmNumber) {
+    passwordCharacters = passwordCharacters.concat(number);
+  }
+
+  if (confirmUpperCaseLetter) {
+    passwordCharacters = passwordCharacters.concat(lettersUpper);
+  }
+
+  if (confirmLowerCaseLetter) {
+    passwordCharacters = passwordCharacters.concat(lettersLower);
+  }
 }
 
 // Get references to the #generate element
