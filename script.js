@@ -90,6 +90,25 @@ var lettersUpper = [
   "Z",
 ];
 
+var confirmLength = "";
+var confirmSpecialCharacter;
+var confirmNumber;
+var confirmLowerCaseLetter;
+var confirmUpperCaseLetter;
+
+function generatePassword() {
+  var confirmLength = prompt(
+    "How many characters would you like in your password?"
+  );
+
+  while (confirmLength <= 7 || confirmLength >= 129) {
+    alert(
+      "Your password must be between 8 and 128 characters! Please try again!"
+    );
+    return generatePassword();
+  }
+}
+
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
