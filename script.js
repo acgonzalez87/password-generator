@@ -139,6 +139,15 @@ function generatePassword() {
   if (confirmLowerCaseLetter) {
     passwordCharacters = passwordCharacters.concat(lettersLower);
   }
+
+  var randomPassword = "";
+
+  for (var i = 0; i < confirmLength; i++) {
+    randomPassword =
+      randomPassword +
+      passwordCharacters[Math.floor(Math.random() * passwordCharacters.length)];
+  }
+  return randomPassword;
 }
 
 // Get references to the #generate element
